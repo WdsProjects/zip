@@ -120,17 +120,17 @@ class UnzipperBot(Client):
                         vid_duration) if vid_duration.isnumeric() else 0,
                     thumb=sthumb,
                     progress=progress_for_pyrogram,
-                    progress_args=("**Trying to upload 😇** \n", tgupmsg, stm))
+                    progress_args=("**Tentando fazer upload 😇** \n", tgupmsg, stm))
             # Upload type: Document
             else:
                 sthumb = await self.get_or_gen_thumb(c_id, doc_f)
                 await self.send_document(
                     chat_id=c_id,
                     document=doc_f,
-                    caption="**Extracted by @NexaUnzipper_Bot**",
+                    caption="**{filename}**",
                     thumb=sthumb,
                     progress=progress_for_pyrogram,
-                    progress_args=("**Trying to upload 😇** \n", tgupmsg, stm))
+                    progress_args=("**Tentando fazer upload 😇** \n", tgupmsg, stm))
             etm = time()
 
             # Delete or edit the progress message
